@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class UIMainMenu : MonoBehaviour
 {
     public Button playButton;
+    public GameObject panelPause;
 
     private void Awake()
     {
@@ -12,6 +13,9 @@ public class UIMainMenu : MonoBehaviour
 
     private void OnPlayButtonClicked()
     {
-        Debug.Log("OnPlayButtonClicked");
+        if(panelPause.activeSelf)
+        {
+            panelPause.SetActive(false);
+        }
     }
 }
