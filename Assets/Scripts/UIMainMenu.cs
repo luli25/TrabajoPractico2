@@ -56,11 +56,11 @@ public class UIMainMenu : MonoBehaviour
 
     private void OnSettingsButtonClicked()
     {
-        if(settingsPanel.activeSelf)
+        if(!settingsPanel.activeSelf)
         {
             mainPanel.SetActive(false);
             settingsPanel.SetActive(true);
-            Debug.Log("Clicked!");
+            //Debug.Log("Clicked!");
         }
     }
 
