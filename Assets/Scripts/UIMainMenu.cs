@@ -3,12 +3,36 @@ using UnityEngine.UI;
 
 public class UIMainMenu : MonoBehaviour
 {
-    public Button playButton;
-    public GameObject panelPause;
+    [SerializeField]
+    private Button playButton;
 
+    [SerializeField]
+    private GameObject panelPause;
+    
     private void Awake()
     {
         playButton.onClick.AddListener(OnPlayButtonClicked);
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!panelPause.activeSelf)
+            {
+                panelPause.SetActive(true);
+
+            } else if (panelPause.activeSelf)
+            {
+                panelPause.SetActive(false);
+            }
+        }
+        
+    }
+
+    private void OnDestroy()
+    {
+        playButton.onClick.RemoveListener(OnPlayButtonClicked);
     }
 
     private void OnPlayButtonClicked()
@@ -18,4 +42,5 @@ public class UIMainMenu : MonoBehaviour
             panelPause.SetActive(false);
         }
     }
+
 }
