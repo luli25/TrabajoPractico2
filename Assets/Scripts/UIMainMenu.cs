@@ -17,11 +17,18 @@ public class UIMainMenu : MonoBehaviour
 
     [SerializeField]
     private GameObject mainPanel;
+
+    [SerializeField]
+    private GameObject creditsPanel;
+
+    [SerializeField]
+    private Button creditsButton;
     
     private void Awake()
     {
         playButton.onClick.AddListener(OnPlayButtonClicked);
         settingsButton.onClick.AddListener(OnSettingsButtonClicked);
+        creditsButton.onClick.AddListener(OnCreditsButtonClicked);
     }
 
     private void Update()
@@ -61,6 +68,16 @@ public class UIMainMenu : MonoBehaviour
             mainPanel.SetActive(false);
             settingsPanel.SetActive(true);
             //Debug.Log("Clicked!");
+        }
+    }
+
+    private void OnCreditsButtonClicked()
+    {
+        if (!creditsPanel.activeSelf)
+        {
+            mainPanel.SetActive(false);
+            settingsPanel.SetActive(false);
+            creditsPanel.SetActive(true);
         }
     }
 
