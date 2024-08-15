@@ -23,6 +23,7 @@ public class UIMainMenu : MonoBehaviour
 
     [SerializeField]
     private Button creditsButton;
+    private bool isPaused;
     
     private void Awake()
     {
@@ -35,13 +36,18 @@ public class UIMainMenu : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
+            isPaused = true;
+            deactivatePanelIfGameIsPaused();
+
             if (!panelPause.activeSelf)
             {
                 panelPause.SetActive(true);
+                panelPause.transform.GetChild(0).gameObject.SetActive(true);
 
             } else if (panelPause.activeSelf)
             {
                 panelPause.SetActive(false);
+                panelPause.transform.GetChild(0).gameObject.SetActive(false);
             }
         }
         
@@ -56,9 +62,9 @@ public class UIMainMenu : MonoBehaviour
 
     private void OnPlayButtonClicked()
     {
-        if(mainPanel.activeSelf)
+        if(panelPause.activeSelf)
         {
-            mainPanel.SetActive(false);
+            panelPause.SetActive(false);
         }
     }
 
@@ -68,7 +74,6 @@ public class UIMainMenu : MonoBehaviour
         {
             mainPanel.SetActive(false);
             settingsPanel.SetActive(true);
-            //Debug.Log("Clicked!");
         }
     }
 
@@ -79,6 +84,19 @@ public class UIMainMenu : MonoBehaviour
             mainPanel.SetActive(false);
             settingsPanel.SetActive(false);
             creditsPanel.SetActive(true);
+        }
+    }
+
+    private void deactivatePanelIfGameIsPaused()
+    {
+        if(isPaused == true)
+        {
+            mainPanel.SetActive(false);
+            settingsPanel.SetActive(false);
+            creditsPanel.SetActive(false);
+        } else
+        {
+            mainPanel.SetActive(true);
         }
     }
 
