@@ -51,13 +51,14 @@ public class UIMainMenu : MonoBehaviour
     {
         playButton.onClick.RemoveListener(OnPlayButtonClicked);
         settingsButton.onClick.RemoveListener(OnSettingsButtonClicked);
+        creditsButton.onClick.RemoveListener(OnCreditsButtonClicked);
     }
 
     private void OnPlayButtonClicked()
     {
-        if(panelPause.activeSelf)
+        if(mainPanel.activeSelf)
         {
-            panelPause.SetActive(false);
+            mainPanel.SetActive(false);
         }
     }
 
