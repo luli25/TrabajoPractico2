@@ -24,6 +24,7 @@ public class UIMainMenu : MonoBehaviour
 
     [SerializeField]
     private Button creditsButton;
+    
     private bool isPaused;
 
     [SerializeField]
@@ -39,22 +40,22 @@ public class UIMainMenu : MonoBehaviour
 
     private void Update()
     {
+
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             isPaused = true;
             deactivatePanelIfGameIsPaused();
-            EditorApplication.isPaused = true;
-
+           
             if (!panelPause.activeSelf)
             {
                 panelPause.SetActive(true);
                 panelPause.transform.GetChild(0).gameObject.SetActive(true);
 
-            } else if (panelPause.activeSelf)
+            }
+            else if (panelPause.activeSelf)
             {
                 panelPause.SetActive(false);
                 panelPause.transform.GetChild(0).gameObject.SetActive(false);
-                EditorApplication.isPaused = false;
             }
         }
     }

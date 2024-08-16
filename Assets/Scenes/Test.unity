@@ -369,7 +369,7 @@ RectTransform:
   m_Father: {fileID: 1616318670}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -883,10 +883,10 @@ RectTransform:
   - {fileID: 1122423450}
   m_Father: {fileID: 172824589}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 100, y: -258.75}
+  m_SizeDelta: {x: 170, y: 52.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &563861625
 MonoBehaviour:
@@ -1524,7 +1524,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &873597695
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1604,6 +1604,12 @@ MonoBehaviour:
   back: {fileID: 1184575860}
   mainPanel: {fileID: 1306669867}
   settingsPanel: {fileID: 873597694}
+  player1Slider: {fileID: 1878779378}
+  player2Slider: {fileID: 1818937336}
+  player1SliderText: {fileID: 1652123602}
+  player2SliderText: {fileID: 1367499652}
+  player1: {fileID: 658430905}
+  player2: {fileID: 566041459}
 --- !u!1 &878930127
 GameObject:
   m_ObjectHideFlags: 0
@@ -2248,7 +2254,7 @@ RectTransform:
   m_Father: {fileID: 301029935}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2445,10 +2451,10 @@ RectTransform:
   - {fileID: 954631469}
   m_Father: {fileID: 172824589}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 100, y: -113.75}
+  m_SizeDelta: {x: 170, y: 52.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1195489833
 MonoBehaviour:
@@ -2700,10 +2706,10 @@ RectTransform:
   - {fileID: 1881371430}
   m_Father: {fileID: 172824589}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 100, y: -186.25}
+  m_SizeDelta: {x: 170, y: 52.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1289806901
 MonoBehaviour:
@@ -2938,7 +2944,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1306669868
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3030,7 +3036,7 @@ RectTransform:
   m_Father: {fileID: 2132600132}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3084,7 +3090,7 @@ GameObject:
   - component: {fileID: 1367499653}
   - component: {fileID: 1367499652}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: player2Speed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3511,7 +3517,7 @@ GameObject:
   - component: {fileID: 1652123603}
   - component: {fileID: 1652123602}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: player1Speed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3714,10 +3720,10 @@ RectTransform:
   - {fileID: 739263410}
   m_Father: {fileID: 172824589}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 100, y: -41.25}
+  m_SizeDelta: {x: 170, y: 52.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1738210174
 MonoBehaviour:
@@ -3812,7 +3818,7 @@ GameObject:
   - component: {fileID: 1818937335}
   - component: {fileID: 1818937336}
   m_Layer: 5
-  m_Name: Slider (1)
+  m_Name: Slider player2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3903,7 +3909,7 @@ GameObject:
   - component: {fileID: 1878779377}
   - component: {fileID: 1878779378}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: Slider player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4390,7 +4396,7 @@ RectTransform:
   m_Father: {fileID: 621910887}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
