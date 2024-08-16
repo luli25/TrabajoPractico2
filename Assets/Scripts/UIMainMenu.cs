@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,12 +25,16 @@ public class UIMainMenu : MonoBehaviour
     [SerializeField]
     private Button creditsButton;
     private bool isPaused;
+
+    [SerializeField]
+    private Button exitButton;
     
     private void Awake()
     {
         playButton.onClick.AddListener(OnPlayButtonClicked);
         settingsButton.onClick.AddListener(OnSettingsButtonClicked);
         creditsButton.onClick.AddListener(OnCreditsButtonClicked);
+        exitButton.onClick.AddListener(ExitPlayMode);
     }
 
     private void Update()
@@ -38,6 +43,7 @@ public class UIMainMenu : MonoBehaviour
         {
             isPaused = true;
             deactivatePanelIfGameIsPaused();
+            EditorApplication.isPaused = true;
 
             if (!panelPause.activeSelf)
             {
@@ -48,9 +54,9 @@ public class UIMainMenu : MonoBehaviour
             {
                 panelPause.SetActive(false);
                 panelPause.transform.GetChild(0).gameObject.SetActive(false);
+                EditorApplication.isPaused = false;
             }
         }
-        
     }
 
     private void OnDestroy()
@@ -98,6 +104,14 @@ public class UIMainMenu : MonoBehaviour
         {
             mainPanel.SetActive(true);
         }
+    }
+
+    private void ExitPlayMode()
+    {
+#if UNITY_EDITOR
+        EditorApplication.ExitPlaymode();
+#endif
+        Application.Quit();
     }
 
 }
