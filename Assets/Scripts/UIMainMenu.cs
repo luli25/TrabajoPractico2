@@ -45,6 +45,8 @@ public class UIMainMenu : MonoBehaviour
         {
             isPaused = true;
             deactivatePanelIfGameIsPaused();
+
+            EditorApplication.isPaused = true;
            
             if (!panelPause.activeSelf)
             {
@@ -56,6 +58,8 @@ public class UIMainMenu : MonoBehaviour
             {
                 panelPause.SetActive(false);
                 panelPause.transform.GetChild(0).gameObject.SetActive(false);
+
+                EditorApplication.isPaused = false;
             }
         }
     }

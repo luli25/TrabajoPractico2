@@ -58,6 +58,12 @@ public class UISettings : MonoBehaviour
         back.onClick.RemoveListener(OnBackButtonClicked);
     }
 
+    private void OnValueChanged()
+    {
+        float newSpeed = player1Slider.value;
+        playerSpeed = newSpeed;
+    }
+
     private void OnBackButtonClicked()
     {
         mainPanel.SetActive(true);
