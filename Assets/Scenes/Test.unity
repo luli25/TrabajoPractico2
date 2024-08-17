@@ -1604,12 +1604,11 @@ MonoBehaviour:
   back: {fileID: 1184575860}
   mainPanel: {fileID: 1306669867}
   settingsPanel: {fileID: 873597694}
+  movement: {fileID: 658430908}
+  slider1Text: {fileID: 1652123602}
+  slider2Text: {fileID: 1367499652}
   player1Slider: {fileID: 1878779378}
   player2Slider: {fileID: 1818937336}
-  player1SliderText: {fileID: 1652123602}
-  player2SliderText: {fileID: 1367499652}
-  player1: {fileID: 658430905}
-  player2: {fileID: 566041459}
 --- !u!1 &878930127
 GameObject:
   m_ObjectHideFlags: 0
@@ -3892,7 +3891,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 168000528}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 0.5
+  m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -3983,7 +3982,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1343670943}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 0.5
+  m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:

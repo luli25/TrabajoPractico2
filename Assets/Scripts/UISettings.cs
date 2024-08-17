@@ -17,33 +17,42 @@ public class UISettings : MonoBehaviour
     private GameObject settingsPanel;
 
     [SerializeField]
+    private Movement player1;
+
+    [SerializeField]
+    private Movement player2;
+
+    [SerializeField]
+    private TextMeshProUGUI slider1Text;
+
+    [SerializeField]
+    private TextMeshProUGUI slider2Text;
+
+    [SerializeField]
     private Slider player1Slider;
 
     [SerializeField]
     private Slider player2Slider;
 
-    [SerializeField]
-    private TextMeshProUGUI player1SliderText;
+    private float player1Speed;
 
-    [SerializeField]
-    private TextMeshProUGUI player2SliderText;
-
-    [SerializeField]
-    private GameObject player1;
-
-    [SerializeField]
-    private GameObject player2;
-
-    Movement movement;
-    float playerSpeed;
+    private float player2Speed;
 
     private void Awake()
     {
         back.onClick.AddListener(OnBackButtonClicked);
-        movement = player1.GetComponent<Movement>();
 
-        playerSpeed = movement.playerSpeed;
-        player1SliderText.text = playerSpeed.ToString();
+        player1Speed = player1.PlayerSpeed;
+        player2Speed = player2.PlayerSpeed;
+        
+        slider1Text.text = player1Speed.ToString();
+        player1Slider.value = player1Speed;
+
+        slider2Text.text = player2Speed.ToString();
+        player2Slider.value = player2Speed;
+
+        player1Slider.onValueChanged.AddListener(updateFirstPlayerSpeed);
+        player2Slider.onValueChanged.AddListener(updateSecondPlayerSpeed);
 
     }
 
@@ -58,15 +67,32 @@ public class UISettings : MonoBehaviour
         back.onClick.RemoveListener(OnBackButtonClicked);
     }
 
-    private void OnValueChanged()
-    {
-        float newSpeed = player1Slider.value;
-        playerSpeed = newSpeed;
-    }
-
     private void OnBackButtonClicked()
     {
         mainPanel.SetActive(true);
         settingsPanel.SetActive(false);
+    }
+
+    private void updateFirstPlayerSpeed(float newSpeed)
+    {
+        newSpeed = player1Slider.value;
+        Debug.Log(newSpeed);
+        player1Speed = newSpeed;
+
+        player1.PlayerSpeed = player1Speed;
+
+        slider1Text.text = player1Speed.ToString();
+        player1Slider.value = player1Speed;
+    }
+
+    private void updateSecondPlayerSpeed(float updatedSpeed)
+    {
+        updatedSpeed = player2Slider.value;
+        player2Speed = updatedSpeed;
+
+        player2.PlayerSpeed = player2Speed;
+
+        slider2Text.text = player2Speed.ToString();
+        player2Slider.value = player2Speed;
     }
 }

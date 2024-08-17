@@ -57,7 +57,7 @@ public class Movement : MonoBehaviour
         transform.position = pos;
     }
 
-    public float playerSpeed
+    public float PlayerSpeed
     {
         get { return speed; }
         set { speed = value;  }
