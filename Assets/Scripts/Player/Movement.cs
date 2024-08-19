@@ -4,8 +4,6 @@ public class Movement : MonoBehaviour
 {
     [SerializeField]
     private float speed = 0.01f;
-    private float rotationAngleLeft = 10.0f;
-    private float rotationAngleRight = -10.0f;
 
     [SerializeField]
     private KeyCode keyUp;
@@ -22,36 +20,25 @@ public class Movement : MonoBehaviour
     void Update()
     {
         Vector3 pos = transform.position;
-        Quaternion rotation = transform.rotation;
 
         if(Input.GetKey(keyUp))
         {
-            pos.y += speed;
+            pos.y += speed * Time.deltaTime * 1000;
         }
 
         if(Input.GetKey(keyDown))
         {
-            pos.y -= speed;
+            pos.y -= speed * Time.deltaTime * 1000;
         }
 
         if(Input.GetKey(keyRight))
         {
-            pos.x += speed;
+            pos.x += speed * Time.deltaTime * 1000;
         }
 
         if(Input.GetKey(keyLeft))
         {
-            pos.x -= speed;
-        }
-
-        if(Input.GetKeyDown(KeyCode.Q))
-        {
-            transform.Rotate(0, 0, rotationAngleLeft);
-        }
-
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            transform.Rotate(0, 0, rotationAngleRight);
+            pos.x -= speed * Time.deltaTime * 1000;
         }
 
         transform.position = pos;
