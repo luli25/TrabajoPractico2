@@ -25,13 +25,19 @@ public class UIMainMenu : MonoBehaviour
     [SerializeField]
     private Button creditsButton;
     
-    private bool isPaused;
-
     [SerializeField]
     private Button exitButton;
+
+    [SerializeField]
+    private Movement player1;
+
+    [SerializeField]
+    private Movement player2;
+
+    private bool isPaused;
     
     private void Awake()
-    {
+    { 
         playButton.onClick.AddListener(OnPlayButtonClicked);
         settingsButton.onClick.AddListener(OnSettingsButtonClicked);
         creditsButton.onClick.AddListener(OnCreditsButtonClicked);
@@ -41,17 +47,20 @@ public class UIMainMenu : MonoBehaviour
     private void Update()
     {
 
-        if(Input.GetKeyDown(KeyCode.Escape))
+
+
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             isPaused = true;
             deactivatePanelIfGameIsPaused();
-
-            EditorApplication.isPaused = true;
            
             if (!panelPause.activeSelf)
             {
                 panelPause.SetActive(true);
                 panelPause.transform.GetChild(0).gameObject.SetActive(true);
+
+                player1.gameObject.SetActive(false);
+                player2.gameObject.SetActive(false);
 
             }
             else if (panelPause.activeSelf)
@@ -59,7 +68,8 @@ public class UIMainMenu : MonoBehaviour
                 panelPause.SetActive(false);
                 panelPause.transform.GetChild(0).gameObject.SetActive(false);
 
-                EditorApplication.isPaused = false;
+                player1.gameObject.SetActive(true);
+                player2.gameObject.SetActive(true);
             }
         }
     }
@@ -76,6 +86,9 @@ public class UIMainMenu : MonoBehaviour
         if(panelPause.activeSelf)
         {
             panelPause.SetActive(false);
+
+            player1.gameObject.SetActive(true);
+            player2.gameObject.SetActive(true);
         }
     }
 
@@ -105,6 +118,7 @@ public class UIMainMenu : MonoBehaviour
             mainPanel.SetActive(false);
             settingsPanel.SetActive(false);
             creditsPanel.SetActive(false);
+
         } else
         {
             mainPanel.SetActive(true);

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -56,12 +54,6 @@ public class UISettings : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnDestroy()
     {
         back.onClick.RemoveListener(OnBackButtonClicked);
@@ -76,7 +68,6 @@ public class UISettings : MonoBehaviour
     private void updateFirstPlayerSpeed(float newSpeed)
     {
         newSpeed = player1Slider.value;
-        Debug.Log(newSpeed);
         player1Speed = newSpeed;
 
         player1.PlayerSpeed = player1Speed;
