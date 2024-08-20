@@ -12,6 +12,7 @@ public class SpawnManager : MonoBehaviour
 
     private float totalTime;
     private bool spawned;
+    private GameObject obstacle;
 
     private void Start()
     {
@@ -23,8 +24,10 @@ public class SpawnManager : MonoBehaviour
         totalTime += Time.deltaTime;
         if(totalTime > timeToSpawn && !spawned)
         {
-            Instantiate(obstaclePrefab, new Vector2(0, 0), Quaternion.identity);
+            obstacle = Instantiate(obstaclePrefab, new Vector2(0, 0), Quaternion.identity);
             spawned = true;
         }
+
+        Destroy(obstacle, 3);
     }
 }
