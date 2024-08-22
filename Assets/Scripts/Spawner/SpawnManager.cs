@@ -11,8 +11,9 @@ public class SpawnManager : MonoBehaviour
     private float timeToSpawn;
 
     private float totalTime;
-    private bool spawned;
     private GameObject obstacle;
+
+    private bool spawned = false;
 
     private void Start()
     {
@@ -22,9 +23,13 @@ public class SpawnManager : MonoBehaviour
     private void Update()
     {
         totalTime += Time.deltaTime;
+        float randomX = Random.Range(0.0f, 4.0f);
+        float randomY = Random.Range(0.0f, 4.0f);
+
+
         if(totalTime > timeToSpawn && !spawned)
         {
-            obstacle = Instantiate(obstaclePrefab, new Vector2(0, 0), Quaternion.identity);
+            obstacle = Instantiate(obstaclePrefab, new Vector2(randomX, randomY), Quaternion.identity);
             spawned = true;
         }
 
