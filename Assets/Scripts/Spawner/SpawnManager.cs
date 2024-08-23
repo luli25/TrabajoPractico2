@@ -10,29 +10,42 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     private float timeToSpawn;
 
+    [SerializeField]
+    private float initialVelocity = 6f;
+
     private float totalTime;
-    private GameObject obstacle;
 
     private bool spawned = false;
+
+    private Rigidbody2D ballRb;
 
     private void Start()
     {
         totalTime = 0;
+        ballRb = obstaclePrefab.GetComponent<Rigidbody2D>();
+        Launch();
     }
 
     private void Update()
     {
         totalTime += Time.deltaTime;
-        float randomX = Random.Range(0.0f, 4.0f);
-        float randomY = Random.Range(0.0f, 4.0f);
 
 
         if(totalTime > timeToSpawn && !spawned)
         {
-            obstacle = Instantiate(obstaclePrefab, new Vector2(randomX, randomY), Quaternion.identity);
+            Instantiate(obstaclePrefab, new Vector2(0, 0), Quaternion.identity);
             spawned = true;
         }
 
-        Destroy(obstacle, 3);
+        
+    }
+
+    private void Launch()
+    {
+        
+        float xVelocity = Random.Range(0, 2) == 0 ? 1 : -1;
+        float yVelocity = Random.Range(0, 2) == 0 ? 1 : -1;
+        ballRb.velocity = new Vector2(xVelocity, yVelocity) * initialVelocity;
+        Debug.Log(ballRb);
     }
 }

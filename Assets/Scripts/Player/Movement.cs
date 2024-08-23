@@ -17,9 +17,12 @@ public class Movement : MonoBehaviour
     [SerializeField]
     private KeyCode keyRight;
 
+    private float yBoundTop = 4.50f;
+    private float yBoundBottom = -2.34f;
+
     void Update()
     {
-        Vector3 pos = transform.position;
+        Vector2 pos = transform.position;
 
         if(Input.GetKey(keyUp))
         {
@@ -42,6 +45,10 @@ public class Movement : MonoBehaviour
         }
 
         transform.position = pos;
+
+        Vector2 playerPosition = transform.position;
+        playerPosition.y = Mathf.Clamp(playerPosition.y + pos.y * speed * Time.deltaTime, yBoundBottom, yBoundTop);
+        transform.position = playerPosition;
     }
 
     public float PlayerSpeed
