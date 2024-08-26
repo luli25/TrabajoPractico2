@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3549190965897849865}
   - component: {fileID: 2768003428789220705}
-  - component: {fileID: -407332784495104182}
-  - component: {fileID: -8847600570565209586}
+  - component: {fileID: 5148349296818606716}
+  - component: {fileID: 3785819813943759270}
+  - component: {fileID: 1491841301251316844}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -86,7 +87,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &-407332784495104182
+--- !u!50 &5148349296818606716
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -112,8 +113,8 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!58 &-8847600570565209586
+  m_Constraints: 4
+--- !u!58 &3785819813943759270
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,3 +149,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1491841301251316844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2797114875091726320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 173bed15b49c1ec47b58e2126eb213a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialVelocity: 4
