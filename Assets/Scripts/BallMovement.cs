@@ -31,12 +31,4 @@ public class BallMovement : MonoBehaviour
         float yVelocity = Random.Range(0, 2) == 0 ? 1 : -1;
         ballRb.velocity = new Vector2(xVelocity, yVelocity) * initialVelocity;
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.CompareTag("Goal"))
-        {
-            Destroy(ball);
-        }
-    }
 }
