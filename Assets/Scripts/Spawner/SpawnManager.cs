@@ -14,6 +14,10 @@ public class SpawnManager : MonoBehaviour
 
     private GameObject obstacleInstance;
 
+    private int maxObstaclesSpawned = 4;
+
+    private int obstacleCount;
+
     private void Start()
     {
         totalTime = 0;
@@ -23,17 +27,18 @@ public class SpawnManager : MonoBehaviour
     {
         
         totalTime += Time.deltaTime;
-
+        float randomX = Random.Range(0, 2f);
+        float randomY = Random.Range(0, 4f);
 
         if(totalTime > timeToSpawn && !spawned)
         {
-            obstacleInstance = Instantiate(obstaclePrefab, new Vector2(0, 0), Quaternion.identity);
+            obstacleInstance = Instantiate(obstaclePrefab, new Vector2(randomX, randomY), Quaternion.identity);
             spawned = true;
+            obstacleCount++;
         }
 
         Destroy(obstacleInstance, 3);
         
-
-        
     }
+
 }
