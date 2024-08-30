@@ -17,10 +17,6 @@ public class Movement : MonoBehaviour
     [SerializeField]
     private KeyCode keyRight;
 
-    private float yBoundTop = 4.50f;
-    private float yBoundBottom = -2.34f;
-
-    private float playerMovement;
     private Rigidbody2D rb;
 
     private void Start()
@@ -43,13 +39,11 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey(keyUp))
         {
-            playerMovement = Input.GetAxisRaw("Vertical");
             rb.AddForce(Vector2.up * speed * Time.deltaTime * 1000);
         }
 
         if (Input.GetKey(keyDown))
         {
-            playerMovement = Input.GetAxisRaw("Vertical");
             rb.AddForce(Vector2.down * speed * Time.deltaTime * 1000);
         }
 

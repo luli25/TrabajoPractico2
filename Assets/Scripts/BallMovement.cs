@@ -11,6 +11,8 @@ public class BallMovement : MonoBehaviour
 
     private Rigidbody2D ballRb;
 
+    private int magnitude = 50;
+
 
     void Start()
     {
@@ -29,6 +31,6 @@ public class BallMovement : MonoBehaviour
 
         float xVelocity = Random.Range(0, 2) == 0 ? 1 : -1;
         float yVelocity = Random.Range(0, 2) == 0 ? 1 : -1;
-        ballRb.velocity = new Vector2(xVelocity, yVelocity) * initialVelocity;
+        ballRb.AddForce(new Vector2(xVelocity, yVelocity) * magnitude * initialVelocity);
     }
 }
