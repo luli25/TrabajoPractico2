@@ -3,7 +3,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField]
-    private float speed = 0.01f;
+    private float speed = 6f;
 
     [SerializeField]
     private KeyCode keyUp;
@@ -20,40 +20,47 @@ public class Movement : MonoBehaviour
     private float yBoundTop = 4.50f;
     private float yBoundBottom = -2.34f;
 
-    void Update()
+    private float playerMovement;
+    private Rigidbody2D rb;
+
+    private void Start()
     {
-        Vector2 pos = transform.position;
+        rb = GetComponent<Rigidbody2D>();
+    }
 
-        if(Input.GetKey(keyUp))
-        {
-            pos.y += speed * Time.deltaTime * 1000;
-        }
-
-        if(Input.GetKey(keyDown))
-        {
-            pos.y -= speed * Time.deltaTime * 1000;
-        }
-
-        if(Input.GetKey(keyRight))
-        {
-            pos.x += speed * Time.deltaTime * 1000;
-        }
-
-        if(Input.GetKey(keyLeft))
-        {
-            pos.x -= speed * Time.deltaTime * 1000;
-        }
-
-        transform.position = pos;
-
-        Vector2 playerPosition = transform.position;
-        playerPosition.y = Mathf.Clamp(playerPosition.y + pos.y * speed * Time.deltaTime, yBoundBottom, yBoundTop);
-        transform.position = playerPosition;
+    private void Update()
+    {   
+        Move();
     }
 
     public float PlayerSpeed
     {
         get { return speed; }
         set { speed = value;  }
+    }
+
+    private void Move()
+    {
+        if (Input.GetKey(keyUp))
+        {
+            playerMovement = Input.GetAxisRaw("Vertical");
+            rb.AddForce(Vector2.up * speed * Time.deltaTime * 1000);
+        }
+
+        if (Input.GetKey(keyDown))
+        {
+            playerMovement = Input.GetAxisRaw("Vertical");
+            rb.AddForce(Vector2.down * speed * Time.deltaTime * 1000);
+        }
+
+        if (Input.GetKey(keyLeft))
+        {
+            rb.AddForce(Vector2.left * speed * Time.deltaTime * 1000);
+        }
+
+        if (Input.GetKey(keyRight))
+        {
+            rb.AddForce(Vector2.right * speed * Time.deltaTime * 1000);
+        }
     }
 }
