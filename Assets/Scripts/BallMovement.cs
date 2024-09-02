@@ -9,6 +9,9 @@ public class BallMovement : MonoBehaviour
     [SerializeField]
     private GameObject ball;
 
+    [SerializeField]
+    private float velocityMultiplier = 1.1f;
+
     private Rigidbody2D ballRb;
 
 
@@ -30,6 +33,14 @@ public class BallMovement : MonoBehaviour
             GameManager.Instance.Player1Scored();
             GameManager.Instance.RestartAfterScore();
             Launch();
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            ballRb.velocity *= velocityMultiplier;
         }
     }
 
