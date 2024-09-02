@@ -4,14 +4,12 @@ public class BallMovement : MonoBehaviour
 {
     
     [SerializeField]
-    private float initialVelocity = 6f;
+    private float initialVelocity = 4f;
 
     [SerializeField]
     private GameObject ball;
 
     private Rigidbody2D ballRb;
-
-    private int magnitude = 50;
 
 
     void Start()
@@ -20,10 +18,19 @@ public class BallMovement : MonoBehaviour
         Launch();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if(collision.gameObject.CompareTag("Goal1"))
+        {
+            GameManager.Instance.Player2Scored();
+            GameManager.Instance.RestartAfterScore();
+            Launch();
+        } else
+        {
+            GameManager.Instance.Player1Scored();
+            GameManager.Instance.RestartAfterScore();
+            Launch();
+        }
     }
 
     private void Launch()
@@ -31,6 +38,6 @@ public class BallMovement : MonoBehaviour
 
         float xVelocity = Random.Range(0, 2) == 0 ? 1 : -1;
         float yVelocity = Random.Range(0, 2) == 0 ? 1 : -1;
-        ballRb.AddForce(new Vector2(xVelocity, yVelocity) * magnitude * initialVelocity);
+        ballRb.AddForce(new Vector2(xVelocity, yVelocity) * initialVelocity, ForceMode2D.Impulse);
     }
 }
