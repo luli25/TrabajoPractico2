@@ -39,22 +39,22 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey(keyUp))
         {
-            rb.AddForce(Vector2.up * speed * Time.deltaTime * 1000);
+            rb.AddForce(Vector2.up * speed * Time.deltaTime * 1000, ForceMode2D.Impulse);
         }
 
         if (Input.GetKey(keyDown))
         {
-            rb.AddForce(Vector2.down * speed * Time.deltaTime * 1000);
+            rb.AddForce(Vector2.down * speed * Time.deltaTime * 1000, ForceMode2D.Impulse);
         }
 
         if (Input.GetKey(keyLeft))
         {
-            rb.AddForce(Vector2.left * speed * Time.deltaTime * 1000);
+            rb.AddForce(Vector2.left * speed * Time.deltaTime * 1000, ForceMode2D.Impulse);
         }
 
         if (Input.GetKey(keyRight))
         {
-            rb.AddForce(Vector2.right * speed * Time.deltaTime * 1000);
+            rb.AddForce(Vector2.right * speed * Time.deltaTime * 1000, ForceMode2D.Impulse);
         }
     }
 }

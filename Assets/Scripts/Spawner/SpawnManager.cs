@@ -25,20 +25,20 @@ public class SpawnManager : MonoBehaviour
 
     private void Update()
     {
-        
-        totalTime += Time.deltaTime;
-        float randomX = Random.Range(0, 2f);
-        float randomY = Random.Range(0, 4f);
 
-        if(totalTime > timeToSpawn && !spawned)
+        totalTime += Time.deltaTime;
+        float randomX = Random.Range(1, 7f);
+        float randomY = Random.Range(1, 7f);
+
+        if (totalTime > timeToSpawn && !spawned)
         {
             obstacleInstance = Instantiate(obstaclePrefab, new Vector2(randomX, randomY), Quaternion.identity);
-            spawned = true;
             obstacleCount++;
+            spawned = true;
         }
-
+     
         Destroy(obstacleInstance, 3);
-        
+
     }
 
 }
