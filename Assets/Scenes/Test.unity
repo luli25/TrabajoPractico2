@@ -978,7 +978,7 @@ MonoBehaviour:
   player2ScoreText: {fileID: 30893212}
   player1Transform: {fileID: 658430907}
   player2Transform: {fileID: 566041461}
-  ballTransform: {fileID: 128251254}
+  ball: {fileID: 128251250}
 --- !u!4 &366566359
 Transform:
   m_ObjectHideFlags: 0

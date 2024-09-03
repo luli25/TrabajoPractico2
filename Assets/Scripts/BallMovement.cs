@@ -41,17 +41,15 @@ public class BallMovement : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("Collision on player!");
-            //Vector2 direction = ballRb.velocity.normalized;
-            //ballRb.AddForce(direction * velocityMultiplier, ForceMode2D.Impulse);
+            Vector2 direction = ballRb.velocity.normalized;
+            ballRb.AddForce(direction * velocityMultiplier, ForceMode2D.Impulse);
         }
     }
 
     private void Launch()
     {
-
         float xVelocity = Random.Range(0, 2) == 0 ? 1 : -1;
         float yVelocity = Random.Range(0, 2) == 0 ? 1 : -1;
         ballRb.AddForce(new Vector2(xVelocity, yVelocity) * initialVelocity, ForceMode2D.Impulse);
-        //ballRb.velocity = new Vector2(xVelocity, yVelocity) * initialVelocity * Time.deltaTime * 10;
     }
 }

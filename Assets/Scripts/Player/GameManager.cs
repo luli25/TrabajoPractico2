@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     private Transform player2Transform;
 
     [SerializeField]
-    private Transform ballTransform;
+    private BallMovement ball;
 
     private int player1Score;
     private int player2Score;
@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     {
         get
         {
-            if(instance == null)
+            if (instance == null)
             {
                 instance = FindObjectOfType<GameManager>();
             }
@@ -50,8 +50,19 @@ public class GameManager : MonoBehaviour
 
     public void RestartAfterScore()
     {
+        Transform ballTransform = ball.transform;
+        Rigidbody2D rigidbody2D = ball.GetComponent<Rigidbody2D>();
+
+        float xDirection = Random.Range(0, 2);
+        float yDirection = Random.Range(0, 2);
+
+
         player1Transform.position = new Vector2(player1Transform.position.x, 0);
         player2Transform.position = new Vector2(player2Transform.position.x, 0);
+
         ballTransform.position = new Vector2(0, 0);
+        rigidbody2D.velocity = Vector2.zero;
+        rigidbody2D.AddForce(new Vector2(xDirection, yDirection), ForceMode2D.Impulse);
+
     }
 }
