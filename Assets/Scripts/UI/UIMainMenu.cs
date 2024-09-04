@@ -47,10 +47,9 @@ public class UIMainMenu : MonoBehaviour
     private void Update()
     {
 
-
-
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            Time.timeScale = 0;
             isPaused = true;
             deactivatePanelIfGameIsPaused();
            
@@ -65,6 +64,7 @@ public class UIMainMenu : MonoBehaviour
             }
             else if (panelPause.activeSelf)
             {
+                Time.timeScale = 1;
                 panelPause.SetActive(false);
                 panelPause.transform.GetChild(0).gameObject.SetActive(false);
 
@@ -72,6 +72,7 @@ public class UIMainMenu : MonoBehaviour
                 player2.gameObject.SetActive(true);
             }
         }
+
     }
 
     private void OnDestroy()

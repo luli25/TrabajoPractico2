@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
@@ -8,37 +9,36 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     private float timeToSpawn;
 
-    private float totalTime;
-
-    private bool spawned = false;
-
     private GameObject obstacleInstance;
 
-    private int maxObstaclesSpawned = 4;
+    private float respawnTime = 2.0f;
 
-    private int obstacleCount;
+    private bool gameStart = false;
+
 
     private void Start()
     {
-        totalTime = 0;
+        gameStart = true;
+        StartCoroutine(ObstaclesWave());
     }
 
-    private void Update()
+    private void SpawnObstacles()
     {
+        float randomX = Random.Range(4f, -5f);
+        float randomY = Random.Range(4f, -2f);
+        float timeToDestroy = Random.Range(3f, 8f);
 
-        totalTime += Time.deltaTime;
-        float randomX = Random.Range(1, 7f);
-        float randomY = Random.Range(1, 7f);
+        obstacleInstance = Instantiate(obstaclePrefab, new Vector2(randomX, randomY), Quaternion.identity);
+        Destroy(obstacleInstance, timeToDestroy);
+    }
 
-        if (totalTime > timeToSpawn && !spawned)
+    IEnumerator ObstaclesWave()
+    {
+        while (gameStart)
         {
-            obstacleInstance = Instantiate(obstaclePrefab, new Vector2(randomX, randomY), Quaternion.identity);
-            obstacleCount++;
-            spawned = true;
+            yield return new WaitForSeconds(respawnTime);
+            SpawnObstacles();
         }
-     
-        Destroy(obstacleInstance, 3);
-
     }
 
 }

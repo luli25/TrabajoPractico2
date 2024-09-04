@@ -40,7 +40,6 @@ public class BallMovement : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Collision on player!");
             Vector2 direction = ballRb.velocity.normalized;
             ballRb.AddForce(direction * velocityMultiplier, ForceMode2D.Impulse);
         }
