@@ -34,6 +34,12 @@ public class UIMainMenu : MonoBehaviour
     [SerializeField]
     private Movement player2;
 
+    [SerializeField]
+    private BallMovement ball;
+
+    [SerializeField]
+    private Canvas score;
+
     private bool isPaused;
     
     private void Awake()
@@ -58,8 +64,11 @@ public class UIMainMenu : MonoBehaviour
                 panelPause.SetActive(true);
                 panelPause.transform.GetChild(0).gameObject.SetActive(true);
 
+                score.gameObject.SetActive(false);
+
                 player1.gameObject.SetActive(false);
                 player2.gameObject.SetActive(false);
+                ball.gameObject.SetActive(false);
 
             }
             else if (panelPause.activeSelf)
@@ -68,8 +77,11 @@ public class UIMainMenu : MonoBehaviour
                 panelPause.SetActive(false);
                 panelPause.transform.GetChild(0).gameObject.SetActive(false);
 
+                score.gameObject.SetActive(false);
+
                 player1.gameObject.SetActive(true);
                 player2.gameObject.SetActive(true);
+                ball.gameObject.SetActive(true);
             }
         }
 
@@ -88,8 +100,11 @@ public class UIMainMenu : MonoBehaviour
         {
             panelPause.SetActive(false);
 
+            score.gameObject.SetActive(true);
+
             player1.gameObject.SetActive(true);
             player2.gameObject.SetActive(true);
+            ball.gameObject.SetActive(true);
         }
     }
 
