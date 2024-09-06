@@ -21,16 +21,16 @@ public class UISettings : MonoBehaviour
     private Movement player2;
 
     [SerializeField]
-    private TextMeshProUGUI slider1Text;
+    private TextMeshProUGUI speedSlider1Text;
 
     [SerializeField]
-    private TextMeshProUGUI slider2Text;
+    private TextMeshProUGUI speedSlider2Text;
 
     [SerializeField]
-    private Slider player1Slider;
+    private Slider player1Slider_Speed;
 
     [SerializeField]
-    private Slider player2Slider;
+    private Slider player2Slider_Speed;
 
     private float player1Speed;
 
@@ -43,14 +43,14 @@ public class UISettings : MonoBehaviour
         player1Speed = player1.PlayerSpeed;
         player2Speed = player2.PlayerSpeed;
         
-        slider1Text.text = player1Speed.ToString();
-        player1Slider.value = player1Speed;
+        speedSlider1Text.text = player1Speed.ToString();
+        player1Slider_Speed.value = player1Speed;
 
-        slider2Text.text = player2Speed.ToString();
-        player2Slider.value = player2Speed;
+        speedSlider2Text.text = player2Speed.ToString();
+        player2Slider_Speed.value = player2Speed;
 
-        player1Slider.onValueChanged.AddListener(updateFirstPlayerSpeed);
-        player2Slider.onValueChanged.AddListener(updateSecondPlayerSpeed);
+        player1Slider_Speed.onValueChanged.AddListener(updateFirstPlayerSpeed);
+        player2Slider_Speed.onValueChanged.AddListener(updateSecondPlayerSpeed);
 
     }
 
@@ -67,23 +67,23 @@ public class UISettings : MonoBehaviour
 
     private void updateFirstPlayerSpeed(float newSpeed)
     {
-        newSpeed = player1Slider.value;
+        newSpeed = player1Slider_Speed.value;
         player1Speed = newSpeed;
 
         player1.PlayerSpeed = player1Speed;
 
-        slider1Text.text = player1Speed.ToString();
-        player1Slider.value = player1Speed;
+        speedSlider1Text.text = player1Speed.ToString();
+        player1Slider_Speed.value = player1Speed;
     }
 
     private void updateSecondPlayerSpeed(float updatedSpeed)
     {
-        updatedSpeed = player2Slider.value;
+        updatedSpeed = player2Slider_Speed.value;
         player2Speed = updatedSpeed;
 
         player2.PlayerSpeed = player2Speed;
 
-        slider2Text.text = player2Speed.ToString();
-        player2Slider.value = player2Speed;
+        speedSlider2Text.text = player2Speed.ToString();
+        player2Slider_Speed.value = player2Speed;
     }
 }
