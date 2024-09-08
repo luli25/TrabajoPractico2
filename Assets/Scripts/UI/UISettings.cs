@@ -32,9 +32,35 @@ public class UISettings : MonoBehaviour
     [SerializeField]
     private Slider player2Slider_Speed;
 
+    [SerializeField]
+    private TMP_Dropdown colorDropdownP1;
+
+    [SerializeField]
+    private TMP_Dropdown colorDropdownP2;
+
+    [SerializeField]
+    private Slider player1Slider_Scale;
+
+    [SerializeField]
+    private Slider player2Slider_Scale;
+
+    [SerializeField]
+    private TextMeshProUGUI scaleSliderText1;
+
+    [SerializeField]
+    private TextMeshProUGUI scaleSliderText2;
+
+    private SpriteRenderer spriteP1;
+
+    private SpriteRenderer spriteP2;
+
     private float player1Speed;
 
     private float player2Speed;
+
+    private float player1Scale;
+
+    private float player2Scale;
 
     private void Awake()
     {
@@ -42,7 +68,7 @@ public class UISettings : MonoBehaviour
 
         player1Speed = player1.PlayerSpeed;
         player2Speed = player2.PlayerSpeed;
-        
+
         speedSlider1Text.text = player1Speed.ToString();
         player1Slider_Speed.value = player1Speed;
 
@@ -51,6 +77,21 @@ public class UISettings : MonoBehaviour
 
         player1Slider_Speed.onValueChanged.AddListener(updateFirstPlayerSpeed);
         player2Slider_Speed.onValueChanged.AddListener(updateSecondPlayerSpeed);
+
+        colorDropdownP1.onValueChanged.AddListener(ChangePlayer1Color);
+        colorDropdownP2.onValueChanged.AddListener(ChangePlayer2Color);
+
+        spriteP1 = player1.gameObject.GetComponent<SpriteRenderer>();
+        spriteP2 = player2.gameObject.GetComponent<SpriteRenderer>();
+
+        player1Scale = spriteP1.gameObject.transform.localScale.y;
+        player2Scale = spriteP2.gameObject.transform.localScale.y;
+
+        scaleSliderText1.text = player1Scale.ToString();
+        scaleSliderText2.text = player2Scale.ToString();
+
+        player1Slider_Scale.onValueChanged.AddListener(updatePlayer1Scale);
+        player2Slider_Scale.onValueChanged.AddListener(updatePlayer2Scale);
 
     }
 
@@ -85,5 +126,79 @@ public class UISettings : MonoBehaviour
 
         speedSlider2Text.text = player2Speed.ToString();
         player2Slider_Speed.value = player2Speed;
+    }
+
+    private void ChangePlayer1Color(int choosedColor)
+    {
+
+        choosedColor = colorDropdownP1.value;
+
+        switch(choosedColor)
+        {
+            case 0:
+                spriteP1.color = Color.blue;
+                break;
+            case 1:
+                spriteP1.color = Color.black;
+                break;
+            case 3:
+                spriteP1.color = Color.green;
+                break;
+            case 4:
+                spriteP1.color = Color.red;
+                break;
+            case 5:
+                spriteP1.color = Color.white;
+                break;
+            case 6:
+                spriteP1.color = Color.white;
+                break;
+        }
+    }
+
+    private void ChangePlayer2Color(int choosedColor)
+    {
+
+        choosedColor = colorDropdownP2.value;
+
+        switch (choosedColor)
+        {
+            case 0:
+                spriteP2.color = Color.blue;
+                break;
+            case 1:
+                spriteP2.color = Color.black;
+                break;
+            case 3:
+                spriteP2.color = Color.green;
+                break;
+            case 4:
+                spriteP2.color = Color.red;
+                break;
+            case 5:
+                spriteP2.color = Color.white;
+                break;
+            case 6:
+                spriteP2.color = Color.white;
+                break;
+        }
+    }
+
+    private void updatePlayer1Scale(float updatedScale)
+    {
+        updatedScale = player1Slider_Speed.value;
+        player1Scale = updatedScale;
+
+        scaleSliderText1.text = player1Scale.ToString();
+        player1Slider_Scale.value = player1Scale;
+    }
+
+    private void updatePlayer2Scale(float updatedScale)
+    {
+        updatedScale = player2Slider_Speed.value;
+        player2Scale = updatedScale;
+
+        scaleSliderText2.text = player2Scale.ToString();
+        player2Slider_Scale.value = player2Scale;
     }
 }
