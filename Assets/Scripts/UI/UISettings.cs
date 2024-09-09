@@ -186,8 +186,11 @@ public class UISettings : MonoBehaviour
 
     private void updatePlayer1Scale(float updatedScale)
     {
-        updatedScale = player1Slider_Speed.value;
+        updatedScale = player1Slider_Scale.value;
         player1Scale = updatedScale;
+
+        Vector2 newScale = new Vector2(1.12f, updatedScale);
+        spriteP1.transform.localScale = newScale;
 
         scaleSliderText1.text = player1Scale.ToString();
         player1Slider_Scale.value = player1Scale;
@@ -195,8 +198,11 @@ public class UISettings : MonoBehaviour
 
     private void updatePlayer2Scale(float updatedScale)
     {
-        updatedScale = player2Slider_Speed.value;
+        updatedScale = player2Slider_Scale.value;
         player2Scale = updatedScale;
+
+        Vector2 newScale = new Vector2(1.12f, updatedScale);
+        spriteP2.transform.localScale = newScale;
 
         scaleSliderText2.text = player2Scale.ToString();
         player2Slider_Scale.value = player2Scale;
