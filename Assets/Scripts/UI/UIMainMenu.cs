@@ -40,7 +40,7 @@ public class UIMainMenu : MonoBehaviour
     [SerializeField]
     private Canvas score;
 
-    private bool isPaused;
+    private bool isPaused = true;
     
     private void Awake()
     { 
@@ -50,13 +50,17 @@ public class UIMainMenu : MonoBehaviour
         exitButton.onClick.AddListener(ExitPlayMode);
     }
 
+    private void Start()
+    {
+        Time.timeScale = 0;
+    }
+
     private void Update()
     {
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Time.timeScale = 0;
-            isPaused = true;
+            TogglePause();
             DeactivatePanelIfGameIsPaused();
            
             if (!panelPause.activeSelf)
@@ -68,12 +72,10 @@ public class UIMainMenu : MonoBehaviour
 
                 player1.gameObject.SetActive(false);
                 player2.gameObject.SetActive(false);
-                ball.gameObject.SetActive(false);
 
             }
             else if (panelPause.activeSelf)
             {
-                Time.timeScale = 1;
                 panelPause.SetActive(false);
                 panelPause.transform.GetChild(0).gameObject.SetActive(false);
 
@@ -81,7 +83,6 @@ public class UIMainMenu : MonoBehaviour
 
                 player1.gameObject.SetActive(true);
                 player2.gameObject.SetActive(true);
-                ball.gameObject.SetActive(true);
             }
         }
 
@@ -98,9 +99,8 @@ public class UIMainMenu : MonoBehaviour
     {
         if(panelPause.activeSelf)
         {
+            TogglePause();
             panelPause.SetActive(false);
-
-            Time.timeScale = 1;
 
             score.gameObject.SetActive(true);
 
@@ -149,6 +149,20 @@ public class UIMainMenu : MonoBehaviour
         EditorApplication.ExitPlaymode();
 #endif
         Application.Quit();
+    }
+
+    private void TogglePause()
+    {
+        if(isPaused)
+        {
+            Time.timeScale = 1f;
+            isPaused = false;
+
+        } else
+        {
+            Time.timeScale = 0f;
+            isPaused = true; ;
+        }
     }
 
 }

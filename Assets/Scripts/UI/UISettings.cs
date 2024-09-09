@@ -180,7 +180,7 @@ public class UISettings : MonoBehaviour
                 spriteP2.color = Color.white;
                 break;
             case 6:
-                spriteP2.color = Color.white;
+                spriteP2.color = Color.yellow;
                 break;
         }
     }
