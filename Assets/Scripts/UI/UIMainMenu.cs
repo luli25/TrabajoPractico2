@@ -57,7 +57,7 @@ public class UIMainMenu : MonoBehaviour
         {
             Time.timeScale = 0;
             isPaused = true;
-            deactivatePanelIfGameIsPaused();
+            DeactivatePanelIfGameIsPaused();
            
             if (!panelPause.activeSelf)
             {
@@ -100,6 +100,8 @@ public class UIMainMenu : MonoBehaviour
         {
             panelPause.SetActive(false);
 
+            Time.timeScale = 1;
+
             score.gameObject.SetActive(true);
 
             player1.gameObject.SetActive(true);
@@ -127,7 +129,7 @@ public class UIMainMenu : MonoBehaviour
         }
     }
 
-    private void deactivatePanelIfGameIsPaused()
+    private void DeactivatePanelIfGameIsPaused()
     {
         if(isPaused == true)
         {

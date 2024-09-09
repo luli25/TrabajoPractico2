@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     private int player1Score;
     private int player2Score;
 
+    private int maxPoints = 20;
+
     private static GameManager instance;
 
     public static GameManager Instance
