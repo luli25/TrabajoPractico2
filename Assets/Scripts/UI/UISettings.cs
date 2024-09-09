@@ -93,6 +93,9 @@ public class UISettings : MonoBehaviour
         player1Slider_Scale.onValueChanged.AddListener(UpdatePlayer1Scale);
         player2Slider_Scale.onValueChanged.AddListener(UpdatePlayer2Scale);
 
+        spriteP1.color = Color.white;
+        spriteP2.color = Color.white;
+
     }
 
     private void OnDestroy()
@@ -130,56 +133,54 @@ public class UISettings : MonoBehaviour
 
     private void ChangePlayer1Color(int choosedColor)
     {
-
         choosedColor = colorDropdownP1.value;
 
         switch(choosedColor)
         {
             case 0:
-                spriteP1.material.color = Color.blue;
+                spriteP1.color = Color.blue;
                 break;
             case 1:
-                spriteP1.material.color = Color.gray;
+                spriteP1.color = Color.gray;
                 break;
             case 3:
-                spriteP1.material.color = Color.green;
+                spriteP1.color = Color.green;
                 break;
             case 4:
-                spriteP1.material.color = Color.red;
+                spriteP1.color = Color.red;
                 break;
             case 5:
-                spriteP1.material.color = Color.white;
+                spriteP1.color = Color.white;
                 break;
             case 6:
-                spriteP1.material.color = Color.white;
+                spriteP1.color = Color.white;
                 break;
         }
     }
 
     private void ChangePlayer2Color(int choosedColor)
     {
-
         choosedColor = colorDropdownP2.value;
 
         switch (choosedColor)
         {
             case 0:
-                spriteP2.material.color = Color.blue;
+                spriteP2.color = Color.blue;
                 break;
             case 1:
-                spriteP2.material.color = Color.black;
+                spriteP2.color = Color.black;
                 break;
             case 3:
-                spriteP2.material.color = Color.green;
+                spriteP2.color = Color.green;
                 break;
             case 4:
-                spriteP2.material.color = Color.red;
+                spriteP2.color = Color.red;
                 break;
             case 5:
-                spriteP2.material.color = Color.white;
+                spriteP2.color = Color.white;
                 break;
             case 6:
-                spriteP2.material.color = Color.white;
+                spriteP2.color = Color.white;
                 break;
         }
     }

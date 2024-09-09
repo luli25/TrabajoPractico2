@@ -47,6 +47,7 @@ public class BallMovement : MonoBehaviour
 
     private void Launch()
     {
+
         float xVelocity = Random.Range(0, 2) == 0 ? 1 : -1;
         float yVelocity = Random.Range(0, 2) == 0 ? 1 : -1;
         ballRb.AddForce(new Vector2(xVelocity, yVelocity) * initialVelocity, ForceMode2D.Impulse);
