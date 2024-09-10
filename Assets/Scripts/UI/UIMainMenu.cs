@@ -79,7 +79,7 @@ public class UIMainMenu : MonoBehaviour
                 panelPause.SetActive(false);
                 panelPause.transform.GetChild(0).gameObject.SetActive(false);
 
-                score.gameObject.SetActive(false);
+                score.gameObject.SetActive(true);
 
                 player1.gameObject.SetActive(true);
                 player2.gameObject.SetActive(true);
