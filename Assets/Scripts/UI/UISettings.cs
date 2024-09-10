@@ -141,19 +141,25 @@ public class UISettings : MonoBehaviour
                 spriteP1.color = Color.blue;
                 break;
             case 1:
-                spriteP1.color = Color.gray;
+                spriteP1.color = Color.black;
                 break;
-            case 3:
+            case 2:
                 spriteP1.color = Color.green;
                 break;
-            case 4:
+            case 3:
                 spriteP1.color = Color.red;
                 break;
-            case 5:
+            case 4:
                 spriteP1.color = Color.white;
                 break;
+            case 5:
+                spriteP1.color = Color.yellow;
+                break;
             case 6:
-                spriteP1.color = Color.white;
+                spriteP1.color = Color.magenta;
+                break;
+            case 7:
+                spriteP1.color = Color.cyan;
                 break;
         }
     }
@@ -170,17 +176,23 @@ public class UISettings : MonoBehaviour
             case 1:
                 spriteP2.color = Color.black;
                 break;
-            case 3:
+            case 2:
                 spriteP2.color = Color.green;
                 break;
-            case 4:
+            case 3:
                 spriteP2.color = Color.red;
                 break;
-            case 5:
+            case 4:
                 spriteP2.color = Color.white;
                 break;
-            case 6:
+            case 5:
                 spriteP2.color = Color.yellow;
+                break;
+            case 6:
+                spriteP2.color = Color.magenta;
+                break;
+            case 7:
+                spriteP2.color = Color.cyan;
                 break;
         }
     }

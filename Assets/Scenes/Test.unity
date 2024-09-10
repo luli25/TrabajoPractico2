@@ -2748,7 +2748,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 449c28229ec722941b44854c1b63cb0e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 265e10c43db9a404ba1aa215dac50986, type: 3}
   m_Color: {r: 0.97735846, g: 0.97182626, b: 0.97182626, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3606,7 +3606,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 98a3873506cd74c439b6e2113000556d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 265e10c43db9a404ba1aa215dac50986, type: 3}
   m_Color: {r: 0.94716984, g: 0.9132147, b: 0.9132147, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3735,7 +3735,7 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0.057142857, y: 0, z: 0.057142857, w: 0.08571429}
+    border: {x: 0.057142857, y: 0.057142857, z: 0.057142857, w: 0.057142857}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.54285717, y: 0.74285716}
     newSize: {x: 0.19, y: 0.26}
@@ -5654,17 +5654,21 @@ MonoBehaviour:
   m_Options:
     m_Options:
     - m_Text: Blue
-      m_Image: {fileID: 21300000, guid: 2b738c65bcbfa4a40979761548d3bbbc, type: 3}
+      m_Image: {fileID: 0}
     - m_Text: Black
-      m_Image: {fileID: 21300000, guid: 522b43e24faafe94ca692f587a8c9ec6, type: 3}
+      m_Image: {fileID: 0}
     - m_Text: Green
-      m_Image: {fileID: 21300000, guid: 5ffffac673c25874cb9a4cbd33f4a70e, type: 3}
+      m_Image: {fileID: 0}
     - m_Text: Red
-      m_Image: {fileID: 21300000, guid: cf1b7cc292fa7514aa6b64de81a0c9d9, type: 3}
+      m_Image: {fileID: 0}
     - m_Text: White
-      m_Image: {fileID: 21300000, guid: 46af2bc3621cc0844b046a7cfb124fec, type: 3}
+      m_Image: {fileID: 0}
     - m_Text: Yellow
-      m_Image: {fileID: 21300000, guid: 053ec640b706fed4da0eecfe4b4040dc, type: 3}
+      m_Image: {fileID: 0}
+    - m_Text: Purple
+      m_Image: {fileID: 0}
+    - m_Text: LightBlue
+      m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -10058,17 +10062,21 @@ MonoBehaviour:
   m_Options:
     m_Options:
     - m_Text: Blue
-      m_Image: {fileID: 21300000, guid: 2b738c65bcbfa4a40979761548d3bbbc, type: 3}
+      m_Image: {fileID: 0}
     - m_Text: Black
-      m_Image: {fileID: 21300000, guid: 522b43e24faafe94ca692f587a8c9ec6, type: 3}
+      m_Image: {fileID: 0}
     - m_Text: Green
-      m_Image: {fileID: 21300000, guid: 5ffffac673c25874cb9a4cbd33f4a70e, type: 3}
+      m_Image: {fileID: 0}
     - m_Text: Red
-      m_Image: {fileID: 21300000, guid: cf1b7cc292fa7514aa6b64de81a0c9d9, type: 3}
+      m_Image: {fileID: 0}
     - m_Text: White
-      m_Image: {fileID: 21300000, guid: 46af2bc3621cc0844b046a7cfb124fec, type: 3}
+      m_Image: {fileID: 0}
     - m_Text: Yellow
-      m_Image: {fileID: 21300000, guid: 053ec640b706fed4da0eecfe4b4040dc, type: 3}
+      m_Image: {fileID: 0}
+    - m_Text: Purple
+      m_Image: {fileID: 0}
+    - m_Text: Light Blue
+      m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
