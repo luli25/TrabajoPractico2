@@ -1977,7 +1977,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &432142783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2877,7 +2877,7 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0.057142857, y: 0.057142857, z: 0.057142857, w: 0.057142857}
+    border: {x: 0.057142857, y: 0.114285715, z: 0.057142857, w: 0.114285715}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.54285717, y: 0.74285716}
     newSize: {x: 0.19, y: 0.26}
@@ -3735,7 +3735,7 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0.057142857, y: 0.057142857, z: 0.057142857, w: 0.057142857}
+    border: {x: 0.057142857, y: 0.114285715, z: 0.057142857, w: 0.114285715}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.54285717, y: 0.74285716}
     newSize: {x: 0.19, y: 0.26}
