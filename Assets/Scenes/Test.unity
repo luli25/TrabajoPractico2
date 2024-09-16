@@ -883,13 +883,13 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1
-        value: 0.27272797
-        inSlope: 0.07057884
-        outSlope: 0.07057884
+        time: 0.98690796
+        value: 0.042060852
+        inSlope: -0.091529
+        outSlope: -0.091529
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.50004786
+        inWeight: 0.13203901
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -933,7 +933,7 @@ TrailRenderer:
     generateLightingData: 0
   m_MinVertexDistance: 0.3
   m_MaskInteraction: 0
-  m_Autodestruct: 0
+  m_Autodestruct: 1
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
 --- !u!1 &132589171
@@ -2842,7 +2842,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!61 &566041466
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3700,7 +3700,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!61 &658430912
 BoxCollider2D:
   m_ObjectHideFlags: 0
